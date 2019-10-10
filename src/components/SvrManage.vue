@@ -1,8 +1,8 @@
 <template>
   <div>
     <div style="background : gold; font-size:14px; font-weight:bold;"> 연산서버 관리 </div>
-    <SvrMngList v-bind:propsdata="todoItems" @removeTodo="removeTodo"></SvrMngList>
-    <SvrMngInput v-on:addTodo="addTodo"></SvrMngInput>
+    <SvrMngList v-bind:propsdata="SvrItems" @removeSvr="removeSvr"></SvrMngList>
+    <SvrMngInput v-on:addSvr="addSvr"></SvrMngInput>
     <SvrMngFooter v-on:removeAll = "clearAll"> </SvrMngFooter>
   </div>
 </template>
@@ -15,36 +15,39 @@ import SvrMngFooter from './comp-svr-mng/SvrMngFooter.vue'
 export default {
   data() {
     return {
-      todoItems : []
+      SvrItems : []
     }
   },
   created() {
     for(var i=0; i<localStorage.length; i++) {
+      var key_type = JSON.parse(localStorage.key(i));
       if(localStorage.key(i) != "loglevel:webpack-dev-server") {
-        //console.log(localStorage.key(i));
-        var val = localStorage.getItem(localStorage.key(i));
-        var arr = JSON.parse(val);
-        this.todoItems.push(arr);
+        if(key_type[0] == "S") {
+          var val = localStorage.getItem(localStorage.key(i));
+          var arr = JSON.parse(val);
+          this.SvrItems.push(arr);
+        }
       }
     }
     localStorage.removeItem("loglevel:webpack-dev-server");
   },
   methods: {
-    addTodo(todoItem) {
+    addSvr(todoItem) {
+      var id = ["S", localStorage.length];
       localStorage.removeItem("loglevel:webpack-dev-server");
       console.log("here");
       console.log(todoItem[0]);
-      localStorage.setItem(localStorage.length, JSON.stringify(todoItem));
-      this.todoItems.push(todoItem);
+      localStorage.setItem(JSON.stringify(id), JSON.stringify(todoItem));
+      this.SvrItems.push(todoItem);
     },
-    removeTodo(todoItem, index) {
+    removeSvr(todoItem, index) {
       console.log("index3 : " + todoItem[0]);
       localStorage.removeItem(todoItem[0]);
-      this.todoItems.splice(index, 1);
+      this.SvrItems.splice(index, 1);
     },
     clearAll() {
       localStorage.clear();
-      this.todoItems = [];
+      this.SvrItems = [];
     }
   },
 

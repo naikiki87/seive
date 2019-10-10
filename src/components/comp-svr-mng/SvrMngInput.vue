@@ -3,31 +3,31 @@
     <table style="margin:auto;">
       <tr>
         <td class="add_title"> IP </td>
-        <td> <input type="text" v-model="add_ip" placeholder="IP" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_ip" placeholder="IP" v-on:keyup.enter="addSvr"> </td>
         <td class="add_title"> Port </td>
-        <td> <input type="text" v-model="add_port" placeholder="Port" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_port" placeholder="Port" v-on:keyup.enter="addSvr"> </td>
       </tr>
       <tr>
         <td class="add_title"> Root ID </td>
-        <td> <input type="text" v-model="add_id" placeholder="Root ID" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_id" placeholder="Root ID" v-on:keyup.enter="addSvr"> </td>
         <td class="add_title"> Password </td>
-        <td> <input type="text" v-model="add_pw" placeholder="Password" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_pw" placeholder="Password" v-on:keyup.enter="addSvr"> </td>
       </tr>
       <tr>
         <td class="add_title"> Role </td>
-        <td> <input type="text" v-model="add_role" placeholder="Role" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_role" placeholder="Role" v-on:keyup.enter="addSvr"> </td>
               <td class="add_title"> Output Comp </td>
-        <td> <input type="text" v-model="add_outcom" placeholder="Output Computer" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_outcom" placeholder="Output Computer" v-on:keyup.enter="addSvr"> </td>
       </tr>
       <tr>
         <td class="add_title"> Module </td>
-        <td> <input type="text" v-model="add_module" placeholder="Module" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_module" placeholder="Module" v-on:keyup.enter="addSvr"> </td>
         <td class="add_title"> Description </td>
-        <td> <input type="text" v-model="add_desc" placeholder="description" v-on:keyup.enter="addTodo"> </td>
+        <td> <input type="text" v-model="add_desc" placeholder="description" v-on:keyup.enter="addSvr"> </td>
       </tr>
     </table>
-    <button v-on:click="addTodo"> 추가 </button>
-    <button v-on:click="addTodo"> Clear All </button>
+    <button v-on:click="addSvr"> 추가 </button>
+    <button v-on:click="addSvr"> Clear All </button>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    addTodo() {
+    addSvr() {
       if(this.add_ip !== "") {
         var value_ip = this.add_ip && this.add_ip.trim();
         var value_port = this.add_port && this.add_port.trim();
@@ -71,7 +71,7 @@ export default {
         value[7] = value_module;
         value[8] = value_desc;
 
-        this.$emit('addTodo', value);
+        this.$emit('addSvr', value);
         this.clearInput();
       }
     },

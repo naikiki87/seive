@@ -3,7 +3,7 @@
     <Header> </Header>
     <div id="tab-list" style="background : #0a1b2a; height : 50px; padding : 0px; margin:8px; margin-bottom : 20px;">
       <div id="tb_1" class="tabmenu active" v-on:click="tabChange('tb_1', 'svrManage')"> 연산서버 관리 </div>
-      <div id="tb_2" class="tabmenu" v-on:click="tabChange('tb_2', 'schemaManage')"> 데이터스키마 관리 </div>
+      <div id="tb_2" class="tabmenu" v-on:click="tabChange('tb_2', 'schemaManage')"> 데이터스키마 </div>
       <div id="tb_3" class="tabmenu" v-on:click="tabChange('tb_3', 'jobManage')"> JOB 생성/관리 </div>
       <div id="tb_4" class="tabmenu" v-on:click="tabChange('tb_4', 'taskManage')"> TASK 등록/관리 </div>
     </div>
@@ -130,19 +130,18 @@ button {
   float : left;
   padding : 0px;
   height : 48px;
-  width : 126px;
+  width : 105px;
   padding-top : 14px;
   color : white;
-  font-size : 14px;
+  font-size : 13px;
 }
 .active {
-  font-size : 15px;
+  font-size : 14px;
   font-weight:bold;
   color : gold;
 }
 p {
   color : white;
-  font-size : 15px;
   font-weight : bold;
 
 }
