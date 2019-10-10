@@ -13,7 +13,6 @@
         <col style="width: 120px"> <!-- module -->
         <col style="width: 250px"> <!-- desc -->
         <col style="width: 50px"> <!-- delete -->
-        <col style="width: 50px"> <!-- link -->
       </colgroup>
       <thead>
       	<tr>
@@ -28,7 +27,6 @@
       		<th class="svr_list_title">MODULE</th>
           <th class="svr_list_title">DESC</th>
           <th class="svr_list_title">DEL</th>
-          <th class="svr_list_title">LINK</th>
       	</tr>
       </thead>
       <tbody>
@@ -47,7 +45,6 @@
             <span class="removeBtn" type="button" @click="removeSvr(item, i)"> Del
             </span>
           </td>
-          <td></td>
         </tr>
       </tbody>
     </table>

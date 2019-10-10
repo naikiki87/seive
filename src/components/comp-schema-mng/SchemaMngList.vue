@@ -3,7 +3,7 @@
     <table style=" margin : auto; ">
       <colgroup>
         <col style="width: 50px">
-      	<col style="width: 80px">
+      	<col style="width: 150px">
       	<col style="width: 80px">
       </colgroup>
       <thead>

@@ -7,10 +7,6 @@
         <td class="add_title"> Data Schema </td>
         <td> <input type="text" v-model="add_job_schema" placeholder="schema" v-on:keyup.enter="addJob"> </td>
       </tr>
-      <tr>
-        <td class="add_title"> Detail </td>
-        <td colspan='3'> <input style="width:99%;" type="text" v-model="add_job_detail" placeholder="detail" v-on:keyup.enter="addJob"> </td>
-      </tr>
     </table>
     <button v-on:click="addJob"> 추가 </button>
     <button v-on:click="addJob"> Clear All </button>
@@ -22,8 +18,7 @@ export default {
   data() {
     return {
       add_job_name : '',
-      add_job_schema : '',
-      add_job_detail : ''
+      add_job_schema : ''
     }
   },
   methods: {
@@ -31,7 +26,6 @@ export default {
       if(this.add_job_name !== "") {
         var value_name = this.add_job_name && this.add_job_name.trim();
         var value_schema = this.add_job_schema && this.add_job_schema.trim();
-        var value_detail = this.add_job_detail && this.add_job_detail.trim();
 
         var value = [];
 
@@ -40,7 +34,6 @@ export default {
         value[0] = localStorage.length;
         value[1] = value_name;
         value[2] = value_schema;
-        value[3] = value_detail;
 
         this.$emit('addJob', value);
         this.clearInput();

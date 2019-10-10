@@ -1,13 +1,14 @@
 <template>
   <div id = "app">
+    <JsonTest></JsonTest>
     <Header> </Header>
     <div id="tab-list" style="background : #0a1b2a; height : 50px; padding : 0px; margin:8px; margin-bottom : 20px;">
-      <div id="tb_1" class="tabmenu active" v-on:click="tabChange('tb_1', 'svrManage')"> 연산서버 관리 </div>
+      <div id="tb_1" class="tabmenu" v-on:click="tabChange('tb_1', 'svrManage')"> 연산서버 관리 </div>
       <div id="tb_2" class="tabmenu" v-on:click="tabChange('tb_2', 'schemaManage')"> 데이터스키마 </div>
       <div id="tb_3" class="tabmenu" v-on:click="tabChange('tb_3', 'jobManage')"> JOB 생성/관리 </div>
       <div id="tb_4" class="tabmenu" v-on:click="tabChange('tb_4', 'taskManage')"> TASK 등록/관리 </div>
     </div>
-    <div id="svrManage" class="tabcontent" style="width:95%; margin-left:2%; border : 1px solid;">
+    <div id="svrManage" class="tabcontent" style="width:95%; margin-left:2%; border : 1px solid; display : none;">
       <SvrManage> </SvrManage>
     </div>
     <div id="schemaManage" class="tabcontent" style="width:95%; height: 400px; margin-left:2%; border : 1px solid; display:none;">
@@ -23,6 +24,7 @@
 </template>
 
 <script>
+import JsonTest from './components/JsonTest.vue'
 import Header from './components/Header.vue'
 import SvrManage from './components/SvrManage.vue'
 import SchemaManage from './components/SchemaManage.vue'
@@ -98,6 +100,7 @@ export default {
     }
   },
   components: {
+    'JsonTest' : JsonTest,
     'Header' : Header,
     'SvrManage' : SvrManage,
     'SchemaManage' : SchemaManage,

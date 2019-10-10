@@ -1,7 +1,12 @@
 <template>
   <div>
     <div style="background : gold; font-size:14px; font-weight:bold;"> 데이터스키마 관리 </div>
-    <SchemaMngList v-bind:propsdata="schemaItems" @removeSchema="removeSchema"></SchemaMngList>
+    <div style="float:left; margin-left : 13px; margin-right : 20px;">
+      <SchemaMngList v-bind:propsdata="schemaItems" @removeSchema="removeSchema"></SchemaMngList>
+    </div>
+    <div style="height : 200px; float:left; border : 1px blue;">
+      <SchemaMngSubView></SchemaMngSubView>
+    </div>
     <SchemaMngInput v-on:addSchema="addSchema"></SchemaMngInput>
     <SchemaMngFooter v-on:removeAll = "clearAll"> </SchemaMngFooter>
   </div>
@@ -11,6 +16,7 @@
 import SchemaMngList from './comp-schema-mng/SchemaMngList.vue'
 import SchemaMngInput from './comp-schema-mng/SchemaMngInput.vue'
 import SchemaMngFooter from './comp-schema-mng/SchemaMngFooter.vue'
+import SchemaMngSubView from './comp-schema-mng/SchemaMngSubView.vue'
 
 export default {
   data() {
@@ -39,6 +45,7 @@ export default {
   components : {
     'SchemaMngList' : SchemaMngList,
     'SchemaMngInput' : SchemaMngInput,
+    'SchemaMngSubView' : SchemaMngSubView,
     'SchemaMngFooter' : SchemaMngFooter
   }
 }
