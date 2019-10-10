@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> Svr manage </h1>
+    <div style="background : gold; font-size:14px; font-weight:bold;"> 연산서버 관리 </div>
     <SvrMngList v-bind:propsdata="todoItems" @removeTodo="removeTodo"></SvrMngList>
     <SvrMngInput v-on:addTodo="addTodo"></SvrMngInput>
     <SvrMngFooter v-on:removeAll = "clearAll"> </SvrMngFooter>
@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import SvrMngList from './SvrMngList.vue'
-import SvrMngInput from './SvrMngInput.vue'
-import SvrMngFooter from './SvrMngFooter.vue'
+import SvrMngList from './comp-svr-mng/SvrMngList.vue'
+import SvrMngInput from './comp-svr-mng/SvrMngInput.vue'
+import SvrMngFooter from './comp-svr-mng/SvrMngFooter.vue'
 
 export default {
   data() {

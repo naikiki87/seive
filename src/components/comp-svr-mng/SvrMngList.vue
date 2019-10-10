@@ -15,25 +15,22 @@
         <col style="width: 70px"> <!-- show -->
       </colgroup>
       <thead>
-          <th id="svr_list_header" colspan = 11 style="background : gold;"> Compute Server List</th>
-        	<tr>
-        		<th class="svr_list_title">#</th>
-        		<th class="svr_list_title">PORT</th>
-        		<th class="svr_list_title">ID</th>
-        		<th class="svr_list_title">PW</th>
-            <th class="svr_list_title">STATUS</th>
-            <th class="svr_list_title">ROLE</th>
-        		<th class="svr_list_title">OUTCOMP</th>
-        		<th class="svr_list_title">MODULE</th>
-            <th class="svr_list_title">DESC</th>
-            <th class="svr_list_title">삭제</th>
-            <th class="svr_list_title">연결</th>
-        	</tr>
-        </thead>
-        <tbody>
-          <tr v-for="(item, i) in propsdata" class="shadow">
-          <!--<td> {{ i + 1 }} </td>-->
-          <!--<td>  {{ propsdata[i][0] }} </td> -->
+      	<tr>
+      		<th class="svr_list_title">#</th>
+      		<th class="svr_list_title">PORT</th>
+      		<th class="svr_list_title">ID</th>
+      		<th class="svr_list_title">PW</th>
+          <th class="svr_list_title">STATUS</th>
+          <th class="svr_list_title">ROLE</th>
+      		<th class="svr_list_title">OUTCOMP</th>
+      		<th class="svr_list_title">MODULE</th>
+          <th class="svr_list_title">DESC</th>
+          <th class="svr_list_title">삭제</th>
+          <th class="svr_list_title">연결</th>
+      	</tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item, i) in propsdata" class="shadow">
           <td>  {{ propsdata[i][1] }} </td>
           <td>  {{ propsdata[i][2] }} </td>
           <td>  {{ propsdata[i][3] }} </td>
@@ -50,7 +47,6 @@
           <td></td>
         </tr>
       </tbody>
-
     </table>
   </div>
 </template>
