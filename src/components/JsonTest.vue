@@ -16,20 +16,5 @@ export default {
       jsonFile : userList
     }
   }
-  /*
-  name: "UserList",
-  computed: {
-    users() { // #1
-      return userList.users.map((items) => { // #2
-        // #3
-          let c = new Date(items["created_date"]);
-          let created_date = c.getHours()+"시 "+c.getMinutes()+"분";
-
-          items["created_date"] = created_date;
-
-        return items;
-      })
-    }
-    */
 }
 </script>
