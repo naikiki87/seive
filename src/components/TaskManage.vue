@@ -13,7 +13,7 @@ export default {
       var fso=new ActiveXObject("Scripting.FileSystemObject");
       var filename="C:\\text.txt";
       var delim="\t";
-      
+
       if (!fso.FileExists(filename)) {
           fso.CreateTextFile(filename,true);
       }

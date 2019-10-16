@@ -5,7 +5,7 @@
       <SchemaMngList v-bind:propsdata="schemaItems" @removeSchema="removeSchema"></SchemaMngList>
     </div>
     <div style="height : 200px; float:left; border : 1px blue;">
-      <SchemaMngSubView></SchemaMngSubView>
+      <!--<SchemaMngSubView></SchemaMngSubView>-->
     </div>
     <SchemaMngInput v-on:addSchema="addSchema"></SchemaMngInput>
     <SchemaMngFooter v-on:removeAll = "clearAll"> </SchemaMngFooter>
